@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BADBEE SCHOOL</title>
+  <meta name="description" content="BADBEE SCHOOL — курсы по презентациям, нейросетям, продажам и фрилансу." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header container">
+    <a href="#top" class="brand">BADBEE <span>SCHOOL</span></a>
+    <nav class="nav">
+      <a href="#courses">Курсы</a>
+      <a href="#about">Обо мне</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <a class="button button-dark header-cta" href="#courses">Выбрать курс ↗</a>
+    <button class="menu-btn" aria-label="Открыть меню">☰</button>
+  </header>
+
+  <main id="top">
+    <section class="hero container">
+      <div class="hero-copy">
+        <div class="eyebrow">ОНЛАЙН-КУРСЫ ДЛЯ РЕАЛЬНЫХ РЕЗУЛЬТАТОВ</div>
+        <h1>ДИЗАЙН<span>.</span><br>НАВЫК<span>.</span><br>ДЕНЬГИ<span>.</span></h1>
+        <p>Учись создавать сильные презентации, использовать нейросети и превращать дизайн в профессию.</p>
+        <a href="#courses" class="button button-lime">Выбрать курс ↗</a>
+        <div class="course-line">НЕЙРО / POINT / ДИЗАЙН / ПРОДАЖИ / ФРИЛАНС</div>
+      </div>
+
+      <div class="hero-art" aria-hidden="true">
+        <div class="lime-note">Создавай<br>Продавай<br>Развивайся</div>
+        <div class="card card-a"><div class="mini">01 / 12</div><strong>GOOD<br>IDEAS<br>CHANGE<br><em>EVERYTHING</em></strong></div>
+        <div class="card card-b"><span>PowerPoint</span><div class="fake-ui"></div></div>
+        <div class="card card-c"><span class="portrait-mark">badbee</span><div class="portrait"></div></div>
+        <div class="floating-chip">⚡ Навык, который меняет жизнь ↗</div>
+        <div class="scribble s1">от первого<br>слайда →<br>до первого<br>клиента</div>
+        <div class="scribble s2">Больше,<br>чем просто<br>курсы</div>
+      </div>
+    </section>
+
+    <section class="courses container" id="courses">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">НАШИ КУРСЫ</div>
+          <h2>5 КУРСОВ.<br>ОДНА СИСТЕМА.</h2>
+        </div>
+        <p>Можно начать с отдельного навыка или собрать полный путь — от PowerPoint и дизайна до клиентов и работы на фрилансе.</p>
+      </div>
+
+      <div class="course-grid">
+        <article class="course-card dark">
+          <div class="num">01</div>
+          <div class="course-icon-stack"><span class="icon-card back"></span><span class="icon-card front">AI</span></div>
+          <h3>НЕЙРО</h3>
+          <h4>Нейросети<br>в презентациях</h4>
+          <p>AI для текста, структуры, визуала и нестандартных задач в презентациях.</p>
+          <div class="tags"><span>AI</span><span>ВИЗУАЛ</span><span>ПРЕЗЕНТАЦИИ</span></div>
+          <button class="arrow-btn" data-course="НЕЙРО" data-href="neuro.html">↗</button>
+        </article>
+
+        <article class="course-card light">
+          <div class="num">02</div>
+          <div class="course-icon-stack light-icon"><span class="icon-card back"></span><span class="icon-card front">PPT</span></div>
+          <h3>POINT<span>.</span></h3>
+          <h4>PowerPoint<br>за 5 часов</h4>
+          <p>От знакомства с программой до уверенной работы с презентациями.</p>
+          <div class="tags"><span>ИНСТРУМЕНТЫ</span><span>АНИМАЦИЯ</span><span>ПРАКТИКА</span></div>
+          <button class="arrow-btn" data-course="POINT" data-href="point.html">↗</button>
+        </article>
+
+        <article class="course-card light">
+          <div class="num">03</div>
+          <div class="course-icon-stack"><span class="icon-card back"></span><span class="icon-card front">↖</span></div>
+          <h3>ДИЗАЙН<span>.</span></h3>
+          <h4>База → PRO</h4>
+          <p>PowerPoint + Figma + дизайн и анимация презентаций.</p>
+          <div class="tags"><span>POWERPOINT</span><span>FIGMA</span><span>ANIMATION</span></div>
+          <button class="arrow-btn" data-course="ДИЗАЙН" data-href="design.html">↗</button>
+        </article>
+
+        <article class="course-card light sales-card">
+          <div class="num">04</div>
+          <div class="course-icon-stack light-icon"><span class="icon-card back"></span><span class="icon-card front">▥</span></div>
+          <h3>ПРОДАЖИ<span>.</span></h3>
+          <h4>Продажи<br>услуг</h4>
+          <p>Для специалистов и фрилансеров: клиенты, цена, коммуникация и система продаж.</p>
+          <div class="tags"><span>КЛИЕНТЫ</span><span>ПЕРЕГОВОРЫ</span><span>ЦЕНЫ</span></div>
+          <button class="arrow-btn" data-course="ПРОДАЖИ" data-href="sales.html">↗</button>
+        </article>
+
+        <article class="course-card dark flagship">
+          <div class="flag">ФЛАГМАНСКАЯ ПРОГРАММА</div>
+          <div class="num">05</div>
+          <div class="course-icon-stack"><span class="icon-card back"></span><span class="icon-card front">♛</span></div>
+          <h3>ФРИЛАНС<span>.</span></h3>
+          <h4>ДИЗАЙН × ПРОДАЖИ</h4>
+          <p>ДИЗАЙН × ПРОДАЖИ: от навыка и портфолио до клиентов и работы на фрилансе.</p>
+          <div class="tags"><span>ПОРТФОЛИО</span><span>КЛИЕНТЫ</span><span>СИСТЕМА</span></div>
+          <button class="arrow-btn" data-course="ФРИЛАНС" data-href="freelance.html">↗</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="stats container">
+      <div><strong>ПРАКТИКА</strong><span>задания на реальных<br>дизайн-задачах</span></div>
+      <div><strong>СИСТЕМА</strong><span>понятный путь<br>без хаоса</span></div>
+      <div><strong>РЕЗУЛЬТАТ</strong><span>навык, который можно<br>применять в работе</span></div>
+      <div><strong>COMMUNITY</strong><span>среда для роста<br>и поддержки</span></div>
+    </section>
+
+    <section class="about container" id="about">
+      <div class="about-card about-with-photo">
+        <div class="about-copy">
+          <div class="section-kicker">ОБО МНЕ</div>
+          <h2>ПЕДАГОГ × ДИЗАЙНЕР</h2>
+          <p>Я Настя. Раньше работала педагогом, а затем полностью ушла в графический дизайн. Здесь я соединяю методику обучения, практику и реальные задачи из работы с клиентами.</p>
+          <div class="signature">от первого слайда — до профессии</div>
+        </div>
+        <figure class="about-photo"><img src="assets/nastya.jpg" alt="Настя — автор BADBEE SCHOOL"></figure>
+      </div>
+    </section>
+
+    <section class="student-works container" id="student-works">
+      <div class="section-head">
+        <div><div class="section-kicker">РЕЗУЛЬТАТ</div><h2>РАБОТЫ<br>УЧЕНИКОВ<span>.</span></h2></div>
+        <p>Не учебные макеты ради галочки — реальные презентационные задачи, собранные в процессе обучения.</p>
+      </div>
+      <div class="student-grid">
+        <figure class="student-work"><img src="assets/student-work/work-1.png" alt="Работа ученика — презентация о брекетах"></figure>
+        <figure class="student-work"><img src="assets/student-work/work-2.png" alt="Работа ученика — презентация жилого проекта"></figure>
+        <figure class="student-work"><img src="assets/student-work/work-3.png" alt="Работа ученика — учебная презентация"></figure>
+        <figure class="student-work"><img src="assets/student-work/work-4.png" alt="Работа ученика — конный клуб"></figure>
+      </div>
+    </section>
+
+    <section class="cta container">
+      <div>
+        <div class="section-kicker">BADBEE SCHOOL</div>
+        <h2>ТВОЯ СЛЕДУЮЩАЯ<br>ГЛАВА НАЧИНАЕТСЯ<br>ЗДЕСЬ<span>.</span></h2>
+      </div>
+      <a href="#courses" class="button button-lime big">Выбрать курс ↗</a>
+    </section>
+
+    <section class="faq container" id="faq">
+      <div class="section-kicker">FAQ</div>
+      <details><summary>Как выбрать подходящий курс?</summary><p>POINT — если нужна уверенная работа в PowerPoint; ДИЗАЙН — если хочешь делать сильные презентации; НЕЙРО — если хочешь встроить AI в работу; ПРОДАЖИ — если нужен рост в клиентах и цене; ФРИЛАНС — если нужен полный путь ДИЗАЙН × ПРОДАЖИ.</p></details>
+      <details><summary>Можно ли начать с нуля?</summary><p>Да. На странице каждого курса будет отдельно указано, какой уровень нужен на старте.</p></details>
+      <details><summary>Как проходит обучение и в каком формате?</summary><p>Все уроки и материалы доступны в чате. Ты проходишь обучение в своём темпе, а в программах с сопровождением дополнительно получаешь обратную связь, разборы и помощь по ходу обучения.</p></details>
+    </section>
+  </main>
+
+  <footer class="footer container" id="contacts">
+    <div><strong>BADBEE SCHOOL</strong><br><span>Дизайн. Навык. Деньги.</span></div>
+    <div class="footer-links"><a href="privacy.html">Конфиденциальность</a><a href="https://t.me/badbee_design" target="_blank" rel="noreferrer">Telegram ↗</a></div>
+  </footer>
+
+  <div class="toast" id="toast">Страница курса скоро будет подключена.</div>
+  <script src="script.js"></script>
+</body>
+</html>
