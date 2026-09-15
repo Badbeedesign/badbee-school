@@ -460,3 +460,25 @@ body:not([class^="course-"]) .hero h1{line-height:1.02;}
   .lead-form{grid-template-columns:repeat(3,minmax(0,1fr));}
   .lead-form .form-wide{grid-column:1/-1;}
 }
+
+/* ===== V8 FIX: HERO — реальное расстояние между строками ===== */
+.hero h1.hero-stack{
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:flex-start !important;
+  gap:0 !important;
+  line-height:1 !important;
+}
+.hero h1.hero-stack .hero-line{
+  display:block !important;
+  line-height:.82 !important;
+  margin:0 0 24px 0 !important;
+}
+.hero h1.hero-stack .hero-line:last-child{
+  margin-bottom:0 !important;
+}
+@media (max-width:760px){
+  .hero h1.hero-stack .hero-line{
+    margin-bottom:16px !important;
+  }
+}
