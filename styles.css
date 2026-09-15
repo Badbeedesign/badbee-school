@@ -525,3 +525,81 @@ body.course-sales .pricing-section + .action-section{padding-top:48px}
 .hero h1.hero-stack .hero-line{line-height:.82 !important;margin:0 0 34px 0 !important}
 .hero h1.hero-stack .hero-line:last-child{margin-bottom:0 !important}
 @media(max-width:760px){.hero h1.hero-stack .hero-line{margin-bottom:22px !important}}
+
+/* ===== V13 MOBILE STABILITY — iPhone/Safari ===== */
+/* Never allow Safari to invent a cursive fallback. */
+.card-a em,.portrait-mark,.scribble,.signature,.visual-note{
+  font-family:Inter,Arial,sans-serif;
+  font-style:normal;
+}
+.signature{font-weight:500;letter-spacing:-.03em}
+
+@media(max-width:680px){
+  html,body{max-width:100%;overflow-x:hidden}
+  .container{width:calc(100% - 32px);max-width:none}
+  .site-header{width:calc(100% - 32px);height:68px;padding:0}
+  .brand{font-size:18px;white-space:nowrap}
+  .menu-btn{font-size:0;color:#111;width:38px;height:38px;position:relative;padding:0}
+  .menu-btn::before{content:'☰';font-size:26px;line-height:38px}
+
+  /* Main result strip: 2 x 2 instead of crushed 4-column/one-line layout. */
+  .stats{
+    display:grid !important;
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    gap:0 !important;
+    padding:0 !important;
+    margin:56px auto 64px !important;
+  }
+  .stats>div{
+    min-width:0 !important;
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:flex-start !important;
+    justify-content:flex-start !important;
+    gap:8px !important;
+    padding:22px 12px !important;
+    border-right:1px solid var(--line) !important;
+    border-bottom:1px solid var(--line) !important;
+  }
+  .stats>div:nth-child(2n){border-right:0 !important}
+  .stats>div:nth-last-child(-n+2){border-bottom:0 !important}
+  .stats strong{
+    min-width:0 !important;
+    max-width:100% !important;
+    white-space:normal !important;
+    overflow-wrap:anywhere;
+    font-size:clamp(19px,5.5vw,24px) !important;
+    line-height:.95 !important;
+    letter-spacing:-.055em !important;
+  }
+  .stats span{
+    max-width:100% !important;
+    font-size:11px !important;
+    line-height:1.35 !important;
+  }
+
+  .about-with-photo{border-radius:26px;overflow:hidden}
+  .about-copy{padding:32px 24px !important}
+  .about-copy h2{font-size:clamp(42px,12vw,58px) !important;line-height:.88 !important;overflow-wrap:normal}
+  .about-with-photo .signature{
+    position:static !important;
+    transform:none !important;
+    margin-top:26px !important;
+    font-size:18px !important;
+    line-height:1.2 !important;
+    font-family:Inter,Arial,sans-serif !important;
+    font-style:normal !important;
+    font-weight:500 !important;
+  }
+  .about-photo{min-height:420px !important}
+
+  .hero h1.hero-stack{width:100%;font-size:clamp(48px,15vw,66px) !important}
+  .hero h1.hero-stack .hero-line{white-space:nowrap !important;margin-bottom:16px !important}
+}
+
+@media(max-width:390px){
+  .stats{grid-template-columns:1fr !important}
+  .stats>div{border-right:0 !important;border-bottom:1px solid var(--line) !important;padding:18px 0 !important}
+  .stats>div:last-child{border-bottom:0 !important}
+  .stats strong{font-size:23px !important}
+}
