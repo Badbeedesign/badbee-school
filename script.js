@@ -17,62 +17,48 @@ if (leadForm) {
     const status = document.getElementById('formStatus');
     const submit = leadForm.querySelector('button[type="submit"]');
     const data = Object.fromEntries(new FormData(leadForm).entries());
-
-    // Сначала ЛЮБАЯ анкета сохраняется в Google Sheets.
-    // Для purchase (НЕЙРО / POINT) после сохранения запускается оплата,
-    // когда paymentEndpoint будет подключён.
-
     const endpoint = window.BADBEE_CONFIG?.presaleEndpoint?.trim();
+
     if (!endpoint) {
-      status.textContent = 'Анкета готова. Для отправки в Google Sheets нужно подключить URL Apps Script.';
+      status.textContent = 'Не подключён адрес Google Sheets.';
       return;
     }
-
-    const payload = {
-      ...data,
-      course,
-      source: window.location.href,
-      submittedAt: new Date().toISOString()
-    };
 
     submit.disabled = true;
     const originalText = submit.textContent;
     submit.textContent = 'Отправляем…';
     status.textContent = '';
 
+    const body = new URLSearchParams({
+      course,
+      format: data.format || '',
+      name: data.name || '',
+      phone: data.phone || '',
+      contact: data.contact || '',
+      comment: data.comment || '',
+      source: window.location.href,
+      submittedAt: new Date().toISOString()
+    });
+
     try {
-      await fetch(endpoint, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-        body: JSON.stringify(payload)
-      });
+      // no-cors нужен для Google Apps Script с GitHub Pages.
+      // Запрос считается отправленным только если fetch не завершился сетевой ошибкой.
+      await fetch(endpoint, { method: 'POST', mode: 'no-cors', body });
+
       if (mode === 'purchase') {
         const paymentEndpoint = window.BADBEE_CONFIG?.paymentEndpoint?.trim();
-
         if (!paymentEndpoint) {
           leadForm.reset();
-          status.textContent = 'Готово! Анкета отправлена. Оплату подключим следующим этапом.';
+          status.textContent = 'Анкета отправлена. Мы свяжемся с тобой по указанным контактам.';
           submit.textContent = 'Анкета отправлена ✓';
           return;
         }
-
         submit.textContent = 'Переходим к оплате…';
-
         const paymentResponse = await fetch(paymentEndpoint, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            ...data,
-            course,
-            amount,
-            currency: 'RUB',
-            source: window.location.href,
-            successUrl: new URL('payment-success.html', window.location.href).href,
-            cancelUrl: window.location.href
-          })
+          method: 'POST', headers: {'Content-Type':'application/json'},
+          body: JSON.stringify({...data, course, amount, currency:'RUB', source:window.location.href,
+            successUrl:new URL('payment-success.html', window.location.href).href, cancelUrl:window.location.href})
         });
-
         if (!paymentResponse.ok) throw new Error('Payment endpoint error');
         const paymentResult = await paymentResponse.json();
         if (!paymentResult.checkoutUrl) throw new Error('checkoutUrl missing');
@@ -81,7 +67,7 @@ if (leadForm) {
       }
 
       leadForm.reset();
-      status.textContent = 'Готово! Анкета отправлена. Мы свяжемся с тобой по указанному контакту.';
+      status.textContent = 'Готово! Анкета отправлена. Мы свяжемся с тобой по указанным контактам.';
       submit.textContent = 'Анкета отправлена ✓';
     } catch (error) {
       status.textContent = 'Не получилось отправить анкету. Попробуй ещё раз или напиши в Telegram @nastyapozdn.';
