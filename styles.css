@@ -408,3 +408,8 @@ body.course-sales .who h2{white-space:nowrap}
 @media(max-width:820px){
   .about-photo::after{background:linear-gradient(180deg,#111 0,rgba(17,17,17,.72) 4%,rgba(17,17,17,.2) 10%,rgba(17,17,17,0) 18%)}
 }
+
+/* Main hero final spacing */
+body:not([class^="course-"]) .hero h1{line-height:1.02;}
+body:not([class^="course-"]) .hero h1 br{display:block;content:"";margin-bottom:.10em;}
+@media(max-width:680px){body:not([class^="course-"]) .hero h1{line-height:1.02;}body:not([class^="course-"]) .hero h1 br{margin-bottom:.08em;}}
