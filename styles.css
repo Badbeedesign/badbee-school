@@ -413,3 +413,7 @@ body.course-sales .who h2{white-space:nowrap}
 body:not([class^="course-"]) .hero h1{line-height:1.02;}
 body:not([class^="course-"]) .hero h1 br{display:block;content:"";margin-bottom:.10em;}
 @media(max-width:680px){body:not([class^="course-"]) .hero h1{line-height:1.02;}body:not([class^="course-"]) .hero h1 br{margin-bottom:.08em;}}
+
+/* v4: more breathing room between main hero words */
+body:not([class^="course-"]) .hero h1{line-height:1.02;}
+@media(max-width:680px){body:not([class^="course-"]) .hero h1{line-height:1.02;}}
