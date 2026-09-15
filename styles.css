@@ -499,3 +499,29 @@ body:not([class^="course-"]) .hero h1{line-height:1.02;}
 @media(max-width:900px){.purchase-form-only{grid-template-columns:1fr}.mini-course-pricing{padding-top:56px}.purchase-copy h2 br{display:none}}
 @media(max-width:680px){.mini-price-card{grid-template-columns:1fr auto;padding:22px;gap:18px}.mini-price-card>b{font-size:30px}.purchase-form-only{padding-top:28px}.purchase-copy h2{font-size:48px}}
 @media(max-width:480px){.mini-price-card{grid-template-columns:1fr}.mini-price-card>b{font-size:34px}}
+
+
+/* ===== V12 FINAL — unified pricing cards on DESIGN / SALES / FREELANCE ===== */
+body.course-sales .pricing-section{padding:72px 0 34px;border-top:1px solid var(--line)}
+body.course-sales .pricing-head{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:end;margin-bottom:28px}
+body.course-sales .pricing-head h2{font-size:clamp(48px,6vw,86px);line-height:.9;letter-spacing:-.065em;margin:14px 0 0}
+body.course-sales .pricing-head>p{color:#666;line-height:1.5;max-width:500px}
+body.course-sales .bottom-pricing{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+body.course-sales .hero-price-card{min-height:148px;border:1px solid var(--line);border-radius:22px;padding:24px 26px;display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center;background:rgba(255,255,255,.16)}
+body.course-sales .hero-price-card.featured{background:var(--lime);border-color:var(--lime)}
+body.course-sales .hero-price-card>div{position:relative}
+body.course-sales .hero-price-card strong{display:block;font-size:18px;margin-bottom:12px}
+body.course-sales .hero-price-card p{margin:0;max-width:390px;color:#65635d;font-size:14px;line-height:1.45}
+body.course-sales .hero-price-card.featured p{color:#343b00}
+body.course-sales .hero-price-card>b{font-size:42px;letter-spacing:-.05em;white-space:nowrap}
+body.course-sales .price-badge{display:inline-block;background:#111;color:#fff;border-radius:999px;padding:5px 10px;font-size:9px;font-weight:800;margin-bottom:10px}
+body.course-sales .pricing-section + .action-section{padding-top:48px}
+@media(max-width:900px){body.course-sales .pricing-head{grid-template-columns:1fr;gap:18px}}
+@media(max-width:680px){body.course-sales .pricing-section{padding:56px 0 24px}body.course-sales .bottom-pricing{grid-template-columns:1fr;gap:12px}body.course-sales .hero-price-card{grid-template-columns:1fr auto;gap:18px;padding:22px}body.course-sales .hero-price-card>b{font-size:30px}body.course-sales .pricing-section + .action-section{padding-top:40px}}
+@media(max-width:480px){body.course-sales .hero-price-card{grid-template-columns:1fr}body.course-sales .hero-price-card>b{font-size:34px}}
+
+/* Main hero: visibly separate DESIGN / SKILL / MONEY */
+.hero h1.hero-stack{gap:0 !important}
+.hero h1.hero-stack .hero-line{line-height:.82 !important;margin:0 0 34px 0 !important}
+.hero h1.hero-stack .hero-line:last-child{margin-bottom:0 !important}
+@media(max-width:760px){.hero h1.hero-stack .hero-line{margin-bottom:22px !important}}
