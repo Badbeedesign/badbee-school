@@ -1,8 +1,5 @@
 // BADBEE SCHOOL — настройки интеграций
-// URL Google Apps Script для анкет предзаписи.
-// paymentEndpoint — безопасный серверный endpoint, который создаёт платёж у провайдера
-// и возвращает JSON вида { "checkoutUrl": "https://..." }.
 window.BADBEE_CONFIG = {
-  presaleEndpoint: '',
+  presaleEndpoint: 'https://script.google.com/macros/s/AKfycbxR8Qd20mNqAU_F6z1zQ5n0uG0rrQLrMu0Atrp2bi7A6eOGNgF4dmyEY_VdRBA-15y4Pg/exec',
   paymentEndpoint: ''
 };
