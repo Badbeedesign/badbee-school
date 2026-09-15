@@ -441,3 +441,22 @@ body:not([class^="course-"]) .hero h1{line-height:1.02;}
 @media(max-width:1050px){.stats>div{padding:0 16px;column-gap:12px}.stats span{max-width:130px}}
 @media(max-width:900px){.purchase-section{grid-template-columns:1fr;gap:20px}.purchase-price-card{min-height:180px}.stats span{max-width:none}.cta{padding-top:76px}}
 @media(max-width:680px){.stats>div{grid-template-columns:120px 1fr}.purchase-section{padding:56px 0}.purchase-price-card{grid-template-columns:1fr;gap:18px;padding:24px}.purchase-price-card>b{font-size:42px}.faq p{font-size:15px}.cta{padding-top:64px}}
+
+/* MASTER v7 — hero spacing */
+.hero h1.hero-stack{
+  gap:.20em !important;
+  line-height:.86 !important;
+}
+.hero h1.hero-stack .hero-line{
+  line-height:.86 !important;
+}
+@media (max-width:760px){
+  .hero h1.hero-stack{gap:.18em !important;line-height:.88 !important;}
+  .hero h1.hero-stack .hero-line{line-height:.88 !important;}
+}
+
+/* 3 fields in the first row on desktop */
+@media (min-width:901px){
+  .lead-form{grid-template-columns:repeat(3,minmax(0,1fr));}
+  .lead-form .form-wide{grid-column:1/-1;}
+}

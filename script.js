@@ -10,7 +10,7 @@ if (leadForm) {
   leadForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const section = document.querySelector('.action-section');
+    const section = leadForm.closest('.action-section, .purchase-section');
     const mode = section?.dataset.mode || 'presale';
     const course = section?.dataset.course || 'курс';
     const amount = Number(section?.dataset.amount || 0);
@@ -50,7 +50,7 @@ if (leadForm) {
         if (!result.checkoutUrl) throw new Error('checkoutUrl missing');
         window.location.href = result.checkoutUrl;
       } catch (error) {
-        status.textContent = 'Не получилось открыть оплату. Попробуй ещё раз или напиши в Telegram @badbee_design.';
+        status.textContent = 'Не получилось открыть оплату. Попробуй ещё раз или напиши в Telegram @nastyapozdn.';
         submit.disabled = false;
         submit.textContent = originalText;
       }
@@ -86,7 +86,7 @@ if (leadForm) {
       status.textContent = 'Готово! Анкета отправлена. Мы свяжемся с тобой по указанному контакту.';
       submit.textContent = 'Анкета отправлена ✓';
     } catch (error) {
-      status.textContent = 'Не получилось отправить анкету. Попробуй ещё раз или напиши в Telegram @badbee_design.';
+      status.textContent = 'Не получилось отправить анкету. Попробуй ещё раз или напиши в Telegram @nastyapozdn.';
       submit.disabled = false;
       submit.textContent = originalText;
     }
