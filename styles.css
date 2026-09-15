@@ -417,3 +417,27 @@ body:not([class^="course-"]) .hero h1 br{display:block;content:"";margin-bottom:
 /* v4: more breathing room between main hero words */
 body:not([class^="course-"]) .hero h1{line-height:1.02;}
 @media(max-width:680px){body:not([class^="course-"]) .hero h1{line-height:1.02;}}
+
+/* Hero title: explicit row spacing */
+.hero h1.hero-stack{display:flex;flex-direction:column;align-items:flex-start;gap:.10em;line-height:.78;margin:24px 0 28px}
+.hero h1.hero-stack .hero-line{display:block;white-space:nowrap;line-height:.78;color:#0b0b0b}
+.hero h1.hero-stack .hero-line i{font-style:normal;color:var(--lime)}
+@media (max-width:760px){.hero h1.hero-stack{gap:.12em;line-height:.82}.hero h1.hero-stack .hero-line{line-height:.82}}
+
+
+/* === FINAL QA v6: stats, FAQ, CTA spacing, Neuro/Point purchase card === */
+.stats{grid-template-columns:repeat(4,minmax(0,1fr));gap:0}
+.stats>div{display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:18px;align-items:center;padding:0 24px}
+.stats strong{white-space:nowrap}
+.stats span{max-width:155px;font-size:12px;line-height:1.35}
+.faq p{max-width:1120px;width:100%;font-size:16px;line-height:1.6}
+.cta{padding-top:96px}
+.purchase-section{display:grid;grid-template-columns:.85fr 1.15fr;gap:50px;padding:80px 0;border-top:1px solid var(--line);align-items:start}
+.purchase-price-card{min-height:210px;border:1px solid var(--line);border-radius:28px;padding:30px;display:grid;grid-template-columns:1fr auto;gap:30px;align-items:end;background:var(--lime)}
+.purchase-price-card h2{font-size:clamp(48px,5.5vw,80px);line-height:.9;letter-spacing:-.065em;margin:14px 0 20px}
+.purchase-price-card p{margin:0;max-width:460px;color:#343b00;line-height:1.5}
+.purchase-price-card>b{font-size:clamp(42px,4.5vw,68px);letter-spacing:-.055em;white-space:nowrap}
+.purchase-lead-form{min-height:210px}
+@media(max-width:1050px){.stats>div{padding:0 16px;column-gap:12px}.stats span{max-width:130px}}
+@media(max-width:900px){.purchase-section{grid-template-columns:1fr;gap:20px}.purchase-price-card{min-height:180px}.stats span{max-width:none}.cta{padding-top:76px}}
+@media(max-width:680px){.stats>div{grid-template-columns:120px 1fr}.purchase-section{padding:56px 0}.purchase-price-card{grid-template-columns:1fr;gap:18px;padding:24px}.purchase-price-card>b{font-size:42px}.faq p{font-size:15px}.cta{padding-top:64px}}
